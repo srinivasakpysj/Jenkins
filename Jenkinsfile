@@ -1,4 +1,4 @@
-```groovy
+```
 pipeline {
     agent {
         node {
@@ -30,7 +30,7 @@ pipeline {
                 script {
                     sh """
                         echo "Building"
-                        echo $COURSE
+                        echo \$COURSE
                         env
 
                         echo "Hello ${params.PERSON}"
@@ -56,8 +56,13 @@ pipeline {
                 message "Should we continue?"
                 ok "Yes, we should."
                 submitter "alice,bob"
+
                 parameters {
-                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                    string(
+                        name: 'PERSON',
+                        defaultValue: 'Mr Jenkins',
+                        description: 'Who should I say hello to?'
+                    )
                 }
             }
 
@@ -72,9 +77,11 @@ pipeline {
             echo 'I will always say Hello again!'
             cleanWs()
         }
+
         success {
             echo 'I will run if success'
         }
+
         failure {
             echo 'I will run if failure'
         }
