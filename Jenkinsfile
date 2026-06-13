@@ -40,6 +40,8 @@ parameters {
                 
             }
         }
+
+        // This is Test section information for reference
         stage('Test') {
             steps {
                 echo "Testing"
