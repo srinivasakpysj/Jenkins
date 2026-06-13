@@ -20,7 +20,7 @@ parameters {
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
 }
 
-    // This is build section
+    // This is build section information
     stages {
         stage('Build') {
             steps {
