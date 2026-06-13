@@ -45,6 +45,8 @@ parameters {
                 echo "Testing"
             }
         }
+
+        // This is deploy section information for reference
         stage('Deploy') {
             steps {
                 echo "Deploying"
