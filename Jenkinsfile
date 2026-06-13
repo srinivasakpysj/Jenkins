@@ -26,7 +26,6 @@ parameters {
                     sh """
                         echo "Building"
                         echo $COURSE
-                        sleep 10
                         env
 
                         echo "Hello ${params.PERSON}"
