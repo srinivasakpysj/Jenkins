@@ -4,7 +4,7 @@ pipeline {
             label 'AGENT-1'
     }
 }
-eenvironment {
+environment {
     COURSE = "Jenkins"
 }
     stages {
