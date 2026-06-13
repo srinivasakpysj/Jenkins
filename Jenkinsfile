@@ -58,10 +58,8 @@ parameters {
                     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
                 }
 
-            steps {
-                echo "Deploying"
-
-            }
+        steps {
+            echo "Deploying"
         }
     }
     post{
