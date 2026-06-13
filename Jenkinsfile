@@ -1,4 +1,4 @@
-```
+```groovy
 pipeline {
     agent {
         node {
@@ -23,8 +23,8 @@ pipeline {
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
 
-    // This is build section information for reference
     stages {
+
         stage('Build') {
             steps {
                 script {
@@ -43,30 +43,20 @@ pipeline {
             }
         }
 
-        // This is Test section information for reference
         stage('Test') {
             steps {
                 echo "Testing"
             }
         }
 
-        // This is deploy section information for reference
         stage('Deploy') {
-            input {
-                message "Should we continue?"
-                ok "Yes, we should."
-                submitter "alice,bob"
-
-                parameters {
-                    string(
-                        name: 'PERSON',
-                        defaultValue: 'Mr Jenkins',
-                        description: 'Who should I say hello to?'
-                    )
-                }
-            }
-
             steps {
+                input(
+                    message: "Should we continue?",
+                    ok: "Yes, we should.",
+                    submitter: "alice,bob"
+                )
+
                 echo "Deploying"
             }
         }
